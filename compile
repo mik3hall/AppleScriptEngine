@@ -1,0 +1,1 @@
+gcc -Inative -arch x86_64 -arch i386 -o libAppleScriptEngine.dylib -dynamiclib -F/System/Library/Frameworks/JavaVM.framework/Frameworks -framework JavaVM -framework JavaNativeFoundation -framework Foundation -framework Carbon -framework Cocoa native/*.m 
