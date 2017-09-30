@@ -1,0 +1,1 @@
+java -cp .:AppleScriptEngine.jar -Djava.library.path=. Mps

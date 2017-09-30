@@ -1,0 +1,1 @@
+jar -cvf AppleScriptEngine.jar apple META-INF Engines.class

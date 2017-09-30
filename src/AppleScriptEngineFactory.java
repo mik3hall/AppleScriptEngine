@@ -40,7 +40,7 @@ public class AppleScriptEngineFactory implements ScriptEngineFactory {
     }
 
     static void TRACE(final String str) {
-        System.out.println(AppleScriptEngineFactory.class.getName() + "." + str);
+//        System.out.println(AppleScriptEngineFactory.class.getName() + "." + str);
     }
 
     /**
