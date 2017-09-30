@@ -57,7 +57,7 @@ public class AppleScriptEngine implements ScriptEngine {
     }
 
     static void TRACE(final String str) {
-        System.out.println(AppleScriptEngine.class.getName() + "." + str);
+//        System.out.println(AppleScriptEngine.class.getName() + "." + str);
     }
 
     /**
