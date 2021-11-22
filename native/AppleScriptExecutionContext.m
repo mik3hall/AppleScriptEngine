@@ -29,6 +29,7 @@
 
 #import "AS_NS_ConversionUtils.h"
 
+#include <pthread.h>
 
 @implementation AppleScriptExecutionContext
 
