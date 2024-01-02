@@ -23,7 +23,9 @@
  * questions.
  */
 
-#import <JavaNativeFoundation/JavaNativeFoundation.h>
+//#import <JavaNativeFoundation/JavaNativeFoundation.h>
+// mjh
+#include "JavaNativeFoundation.h"
 
 
 @interface JavaAppleScriptEngineCoercion : NSObject

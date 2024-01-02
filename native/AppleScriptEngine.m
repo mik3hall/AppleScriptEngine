@@ -26,7 +26,9 @@
 #import "apple_applescript_AppleScriptEngine.h"
 #import "apple_applescript_AppleScriptEngineFactory.h"
 
-#import <JavaNativeFoundation/JavaNativeFoundation.h>
+//#import <JavaNativeFoundation/JavaNativeFoundation.h>
+// mjh
+#include "JavaNativeFoundation.h"
 
 #import "NS_Java_ConversionUtils.h"
 #import "AppleScriptExecutionContext.h"

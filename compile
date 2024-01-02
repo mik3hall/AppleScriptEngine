@@ -4,6 +4,16 @@
 # https://macosx-port-dev.openjdk.java.narkive.com/QZT8BXTT/is-javanativefoundation-still-supported-on-os-x-10-10
 # see also
 # https://github.com/apple/openjdk/
+SDK_HDRS="$(xcode-select -p)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/"
 SDK_ROOT="$(xcrun --show-sdk-path)"
+JDK="$(/usr/libexec/java_home)"
+SDK_HDRS="$(xcode-select -p)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/"
+SDK_FRAMEWORKS=$(xcode-select -p)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
 
-gcc -Inative -arch x86_64 -o libAppleScriptEngine.dylib -dynamiclib -F${SDK_ROOT}/System/Library/Frameworks/JavaVM.framework/Frameworks -framework JavaVM -framework JavaNativeFoundation -framework Foundation -framework Carbon -framework Cocoa native/*.m 
+gcc -Inative -arch arm64 -o libAppleScriptEngine.dylib -dynamiclib \
+     -I/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/JavaNativeFoundation.framework/Versions/A/Headers \
+     -I${SDK_HDRS} -I${JDK}/include -I${JDK}/include/darwin \
+     -L/Users/mjh/Documents/JavaNativeFoundation/ -lJavaNativeFoundation \
+     -F${SDK_FRAMEWORKS} -framework Foundation -framework Carbon -framework Cocoa native/*.m 
+     
+install_name_tool -change "libJavaNativeFoundation.dylib" "@loader_path/libJavaNativeFoundation.dylib" "libAppleScriptEngine.dylib"
